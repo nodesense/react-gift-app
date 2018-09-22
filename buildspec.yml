@@ -5,11 +5,9 @@ phases:
     commands:
       - npm install
       - npm run build
-      - aws s3 rm s3://s3-us-west-2.amazonaws.com/react-gift-app --recursive
+      - aws s3 sync --delete . s3://s3-us-west-2.amazonaws.com/react-gift-app
       - aws s3 cp build s3://s3-us-west-2.amazonaws.com/react-gift-app --recursive --acl public-read
 
 artifacts:
   files:
     build/**/*
-
-
