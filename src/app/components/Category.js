@@ -2,6 +2,8 @@
 import React, {Component} from "react";
 import PropTypes from "prop-types";
 
+import * as restful from '../core/restful';
+
 export default class Category extends Component {
     constructor(props) {
         super(props);
@@ -11,15 +13,15 @@ export default class Category extends Component {
     }
     
     componentDidMount() {
-        fetch("https://0lthykuze3.execute-api.ap-southeast-1.amazonaws.com/Prod/categories")
-     .then (response => response.json())
-     .then (categories => {
-        // alert(JSON.stringify(categories))
-        this.setState({
-            categories
+        restful.getJson("https://0lthykuze3.execute-api.ap-southeast-1.amazonaws.com/Prod/categories")
+     
+        .then (categories => {
+            // alert(JSON.stringify(categories))
+            this.setState({
+                categories
+            })
+            console.log('got data ', categories)
         })
-        console.log('got data ', categories)
-     })
     }
     
     render() {
