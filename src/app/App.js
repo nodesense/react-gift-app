@@ -8,6 +8,8 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import Home from './components/Home';
 import Category from './components/Category';
+
+import Account from './components/Account';
 import Authorize from './components/Authorize';
 import Logout from './components/Logout';
 
@@ -26,6 +28,8 @@ class App extends Component {
         <Header />
           <Route path="/" exact component={Home} />
           <Route path="/category" component={Category} />
+          <Route path="/account" component={Account} />
+
 
           <Route path="/auth/authorize" component={Authorize} />
 

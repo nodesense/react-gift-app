@@ -42,6 +42,14 @@ export default class Header extends Component {
                 </NavLink>
 
 
+                <NavLink to="/account" 
+                        exact 
+                        className="button"  
+                        activeClassName="success" >
+                        Account
+                </NavLink>
+
+
                 <NavLink to="/auth/logout" 
                         exact 
                         className="button"  
